@@ -28,7 +28,7 @@ public class Conta {
    
     @ManyToOne
     @JoinColumn(name = "titular")
-    // @JsonIgnoreProperties("contas")
+    @JsonIgnoreProperties("contas")
     private TitularConta titular;
 
     public long getNumConta() {
@@ -62,4 +62,12 @@ public class Conta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+
+    public TitularConta getTitular() {
+        return titular;
+    }
+
+    public void setTitular(TitularConta titular) {
+        this.titular = titular;
+    }   
 }
