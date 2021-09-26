@@ -33,7 +33,7 @@ public class TitularConta {
     // Conta tem apenas um titular
     // Titular pode ter vários tipos de contains
     @OneToMany(mappedBy = "titular")
-    // @JsonIgnoreProperties("titular")
+    @JsonIgnoreProperties("titular")
     public List<Conta> contas;
 
     public long getCodInt() {
