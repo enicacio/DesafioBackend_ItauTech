@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -21,8 +22,9 @@ public class Conta {
     @Column(nullable = false)
     private int agencia;
 
-    @Column(nullable = false)
-    private int tipoConta; // 0 - conta corrente, 1 - poupança, 2 - investimento
+    @OneToOne
+    @JoinColumn(name="tipo_conta")
+    private TipodeConta tipoConta;
 
     @Column(nullable = false)
     private double saldo;
@@ -48,14 +50,6 @@ public class Conta {
         this.agencia = agencia;
     }
 
-    public int getTipoConta() {
-        return tipoConta;
-    }
-
-    public void setTipoConta(int tipoConta) {
-        this.tipoConta = tipoConta;
-    }
-
     public double getSaldo() {
         return saldo;
     }
@@ -70,5 +64,16 @@ public class Conta {
 
     public void setTitular(TitularConta titular) {
         this.titular = titular;
+    }
+
+    public TipodeConta getTipoConta() {
+        return tipoConta;
+    }
+
+    public void setTipoConta(TipodeConta tipoConta) {
+        this.tipoConta = tipoConta;
     }   
+
+    
+
 }
