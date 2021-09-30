@@ -20,14 +20,8 @@ public class TipodeContaController {
 
     // *********** Buscar em contas pelo tipo de conta ***********
     @GetMapping("/{tipoConta}") 
-    public ResponseEntity<TipodeConta> obterTipoConta(@PathVariable int tipoConta) {
-        TipodeConta contaEncontrada = repo.findById(tipoConta).orElse(null);
-        
-        if (contaEncontrada != null) {
-            return ResponseEntity.ok(contaEncontrada);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public Object buscaContaTipo(@PathVariable int tipoConta) {
+        return repo.buscaContaTipo(tipoConta);
     }
     
 }
