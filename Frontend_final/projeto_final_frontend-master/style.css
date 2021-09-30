@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dados {
+    background-color: rgb(189, 186, 186);
+    padding: 10px;
+}
+
+.contas {
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+span {
+    font-weight: 600;
+}
+
+.titular {
+    background-color: brown;
+    padding: 10px;
+}
+
+.clientes {
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+.accounts {
+    background-color: yellowgreen;
+    padding: 10px;
+}
+
+.containere {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    margin: 5px 0;
+    width: 600px;
+    background-color: transparent;
+    border-radius: 6px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
