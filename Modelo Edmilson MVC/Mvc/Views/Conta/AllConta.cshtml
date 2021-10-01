@@ -1,0 +1,35 @@
+
+@model IEnumerable<Conta>
+
+<h1>Lista de todas as contas </h1>
+<hr>
+<table class="table table-striped table-hover">
+    <thead>
+        <th scope="col">Numero</th>
+        <th scope="col">Agencia</th>
+        <th scope="col">TipoConta</th>
+        <th scope="col">Saldo</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">E-mail</th>
+
+
+
+    </thead>
+    <tbody>
+        @foreach (Conta titular1 in Model)
+        {
+            <tr>
+                <td>@titular1.numConta</td>
+                <td>@titular1.agencia</td>
+                <td>@titular1.tipoConta.nomeTipoConta</td>
+                <td>R$ @titular1.saldo.ToString("n")</td>
+                <td>@titular1.titular.nome</td>
+                <td>@titular1.titular.cpf</td>
+                <td>@titular1.titular.telefone</td>
+                <td>@titular1.titular.email</td>
+            </tr>
+        }
+    </tbody>
+</table>

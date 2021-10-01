@@ -1,0 +1,40 @@
+@using Frontend.Models
+@model Conta
+
+<h3> Dados da Conta:</h3>
+<hr>
+<form>
+    <label> Número da Conta</label>
+    <input type="number" id="numConta" name="numConta">
+    <input type="submit" value="Procurar" formmethod="POST">
+</form>
+
+@if (Model!=null) {
+    <hr>
+    <h4><b>Dados da Conta do titular: </b>@Model.titular.nome</h4>
+    <table class="table table-striped table-hover text-center">
+        <thead>
+            <th scope="col">Número da Conta</th>
+            <th scope="col">Agência</th>
+            <th scope="col">Tipo de Conta</th>
+            <th scope="col">Saldo</th>
+            <th scope="col">Código Interno</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">E-mail</th>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>@Model.numConta</td>
+                <td>@Model.agencia</td>
+                <td>@Model.tipoConta.nomeTipoConta</td>
+                <td>R$ @Model.saldo.ToString("n")</td>
+                <td>@Model.titular.codInt</td>
+                <td>@Model.titular.cpf</td>
+                <td>@Model.titular.telefone</td>
+                <td>@Model.titular.email</td>
+            </tr>
+        </tbody>
+    </table>
+}

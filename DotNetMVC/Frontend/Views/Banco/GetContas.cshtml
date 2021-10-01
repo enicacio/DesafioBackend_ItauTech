@@ -1,0 +1,34 @@
+@using Frontend.Models
+@model IEnumerable<Conta>
+
+<h3>Lista de todas as contas</h3>
+<hr>
+<table class="table table-striped table-hover text-center">
+    <thead>
+        <th scope="col">Número da Conta</th>
+        <th scope="col">Agência</th>
+        <th scope="col">Tipo de Conta</th>
+        <th scope="col">Saldo</th>
+        <th scope="col">Nome do Titular</th>
+        <th scope="col">Código Interno</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">E-mail</th>
+    </thead>
+
+    <tbody>
+        @foreach (Conta titular in Model) {
+            <tr>
+                <td>@titular.numConta</td>
+                <td>@titular.agencia</td>
+                <td>@titular.tipoConta.nomeTipoConta</td>
+                <td>R$ @titular.saldo.ToString("n")</td>
+                <td>@titular.titular.nome</td>
+                <td>@titular.titular.codInt</td>
+                <td>@titular.titular.cpf</td>
+                <td>@titular.titular.telefone</td>
+                <td>@titular.titular.email</td>
+            </tr>
+        }
+    </tbody>
+</table>

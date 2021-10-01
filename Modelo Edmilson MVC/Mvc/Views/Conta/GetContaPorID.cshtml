@@ -1,0 +1,38 @@
+@model Conta
+<h3> Dados da Conta:</h3>
+<hr>
+<form>
+    <label> ID da Conta</label>
+    <input type="number" id="id" name="id">
+    <input type="submit" value="Procurar" formmethod="POST">
+</form>
+
+@if (Model!=null)
+{
+   <hr>
+    <h4><b>Dados da Conta do titular:</b>@Model.titular.nome</h4>
+   <table class="table table-striped table-hover">
+        <thead>
+         <th scope="col">Numero</th>
+        <th scope="col">Agencia</th>
+        <th scope="col">TipoConta</th>
+        <th scope="col">Saldo</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">E-mail</th>
+        </thead>
+        <tbody>
+           
+            <tr>
+                <td>@Model.numConta</td>
+                <td>@Model.agencia</td>
+                <td>@Model.tipoConta.nomeTipoConta</td>
+                <td>R$ @Model.saldo.ToString("n")</td>
+                <td>@Model.titular.cpf</td>
+                <td>@Model.titular.telefone</td>
+                <td>@Model.titular.email</td>
+            </tr>
+           
+        </tbody>
+    </table>
+}
